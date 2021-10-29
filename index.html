@@ -5,8 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Quiz</title>
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css">
 </head>
 <body>
-    
+ <!-- 3 div tags - 2nd and 3rd div sections need class of "hide"-->
+    <div id="start">
+        <button id="start-button">
+            Start Quiz
+        </button>
+    </div>
+    <div id="questions" class="hide">
+        <div id=timer></div>
+        <p id="title"></p>
+        <div>
+            <button id="choice-1"></button>
+            <button id="choice-2"></button>
+            <button id="choice-3"></button>
+            <button id="choice-4"></button>
+        </div>
+    </div>
+    <div id="end" class="hide">
+<!--score & input box to enter intials and button to submit-->
+    </div>
+    <script src="./assets/js/script.js"></script>
 </body>
 </html>
