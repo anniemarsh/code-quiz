@@ -20,7 +20,9 @@ var choiceButton1 = document.getElementById("choice-1");
 var choiceButton2 = document.getElementById("choice-2");
 var choiceButton3 = document.getElementById("choice-3");
 var choiceButton4 = document.getElementById("choice-4");
+let score = 0;
 
+//change titles to questions
 var questions = [
     {
     title: "question 1", 
