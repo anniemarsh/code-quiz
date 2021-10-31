@@ -16,33 +16,30 @@ var startSection = document.getElementById("start");
 var questionSection = document.getElementById("questions");
 var endSection = document.getElementById("end");
 var titleElement = document.getElementById("title");
-var choiceButton1 = document.getElementById("choice-1");
-var choiceButton2 = document.getElementById("choice-2");
-var choiceButton3 = document.getElementById("choice-3");
-var choiceButton4 = document.getElementById("choice-4");
+var choicesEl = document.getElementById('choices');
 
 
 //change titles to questions
 var questions = [
     {
-    title: "question 1", 
-    choices: ["choice 1", "choice 2", "choice 3", "choice 4"], 
-    answer: "choice 2"
+    title: "What is the correct operator to compare type and value?", 
+    choices: ["==", "===", "!=", "!==="], 
+    answer: "==="
 },
 {
-    title: "question 2", 
-    choices: ["choice 1", "choice 2", "choice 3", "choice 4"], 
-    answer: "choice 3"
+    title: "How do you declare an empty array?", 
+    choices: ["var array = []", "var array ='", "var array = {}", "var array = [{}]"], 
+    answer: "var array = []"
 }, 
 {
-    title: "question 3", 
-    choices: ["choice 1", "choice 2", "choice 3", "choice 4"], 
-    answer: "choice 4"
+    title: "How do you add 1 to the variable i?", 
+    choices: ["i++", "i=i+1", "i+=1", "all of the above"], 
+    answer: "all of the above"
 },
 {
-    title: "question 4", 
-    choices: ["choice 1", "choice 2", "choice 3", "choice 4"], 
-    answer: "choice 1"
+    title: "_ deletes an element at the end of an array.", 
+    choices: ["delete()", "push()", "pop()", "remove()"], 
+    answer: "pop()"
 }  
 ]
 var questionIndex = 0;
@@ -50,10 +47,6 @@ var questionIndex = 0;
 
 
 startButton.addEventListener("click", startQuiz);
-choiceButton1.addEventListener("click", checkAnswer);
-choiceButton2.addEventListener("click", checkAnswer);
-choiceButton3.addEventListener("click", checkAnswer);
-choiceButton4.addEventListener("click", checkAnswer);
 
 function startQuiz() {
     startSection.classList.add("hide");
@@ -63,11 +56,23 @@ function startQuiz() {
 }
 function getQuestions() {
     var currentQuestion = questions[questionIndex];
+    console.log('currentQuestion', currentQuestion)
     titleElement.innerText = currentQuestion.title;
-    choiceButton1.innerText = currentQuestion.choices[0];
-    choiceButton2.innerText = currentQuestion.choices[1];
-    choiceButton3.innerText = currentQuestion.choices[2];
-    choiceButton4.innerText = currentQuestion.choices[3];
+
+  // clear out any old question choices
+  choicesEl.innerHTML = '';
+
+  // loop over choices
+  currentQuestion.choices.forEach(function (choice, i) {
+      console.log('choice', choice)
+      console.log('i', i)
+    // create new button for each choice
+    var btn = document.createElement("button");   
+    btn.setAttribute
+    // attach click event listener to each choice
+
+    // display on the page
+  })
 }
 function checkAnswer(event) {
     var userChoice = event.target.innerText;
